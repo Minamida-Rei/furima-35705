@@ -14,13 +14,13 @@
 
 ### Association
 - has_many :products
-- has_one :buying
+- has_many :buying
 
 ## productsテーブル
 | Column                    | Type       | Option                         |
 | ------------------------- | ---------- | ------------------------------ |
 | name                      | string     | null: false                    |
-| status_id                 | string     | null: false                    |
+| status_id                 | integer    | null: false                    |
 | explain                   | text       | null: false                    |
 | delivery_charge_id        | integer    | null: false                    |
 | prefecture_id             | integer    | null: false                    |
@@ -44,7 +44,7 @@
 | building_name          | string      |                                |
 
 ### Association
-- has_one :buying
+- belongs_to :buying
 
 ## buyingsテーブル
 | Column           | Type       | Option                         |
@@ -53,4 +53,4 @@
 | product          | references | null: false                    |
 
 ### Association
-- belongs_to :shipping_address
+- has_one :shipping_address

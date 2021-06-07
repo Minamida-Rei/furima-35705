@@ -201,7 +201,7 @@
                         <mxPoint x="630" y="684.29" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="287" value="" style="endArrow=ERone;html=1;rounded=0;strokeWidth=2;fontSize=12;startArrow=ERone;startFill=0;endFill=0;exitX=0.167;exitY=1.082;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="288">
+                <mxCell id="287" value="" style="endArrow=ERmany;html=1;rounded=0;strokeWidth=2;fontSize=12;startArrow=ERone;startFill=0;endFill=0;exitX=0.167;exitY=1.082;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="288">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="80" y="350" as="sourcePoint"/>
                         <mxPoint x="760" y="785" as="targetPoint"/>
@@ -214,7 +214,7 @@
                 <mxCell id="288" value="nickname (string型, NOT NULL)" style="whiteSpace=wrap;html=1;strokeColor=#f0f0f0;fontSize=12;align=left;" vertex="1" parent="1">
                     <mxGeometry x="40" y="350" width="240" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="289" value="" style="whiteSpace=wrap;html=1;strokeColor=#f0f0f0;fontSize=12;align=left;" vertex="1" parent="1">
+                <mxCell id="289" value="building_name (string型)" style="whiteSpace=wrap;html=1;strokeColor=#f0f0f0;fontSize=12;align=left;" vertex="1" parent="1">
                     <mxGeometry x="190" y="760" width="280" height="40" as="geometry"/>
                 </mxCell>
             </root>
