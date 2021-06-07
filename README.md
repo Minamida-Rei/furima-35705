@@ -42,6 +42,7 @@
 | address                | string      | null: false                    |
 | phone_number           | string      | null: false                    |
 | building_name          | string      |                                |
+| buying                 | references  | null: false                    |
 
 ### Association
 - belongs_to :buying
