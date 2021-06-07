@@ -186,26 +186,6 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="217" value="" style="endArrow=ERone;html=1;rounded=0;strokeWidth=2;fontSize=41;startArrow=ERone;startFill=0;endFill=0;" edge="1" parent="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="160" y="350" as="sourcePoint"/>
-                        <mxPoint x="240" y="520" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="160" y="440"/>
-                            <mxPoint x="240" y="440"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="218" value="" style="endArrow=ERone;html=1;rounded=0;strokeWidth=2;fontSize=41;startArrow=ERone;startFill=0;endFill=0;" edge="1" parent="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="560" y="450" as="sourcePoint"/>
-                        <mxPoint x="360" y="520" as="targetPoint"/>
-                        <Array as="points">
-                            <mxPoint x="560" y="460"/>
-                            <mxPoint x="360" y="460"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
                 <mxCell id="283" value="category_id (integer型, NOT NULL)" style="whiteSpace=wrap;html=1;strokeColor=#f0f0f0;fontSize=12;align=left;" vertex="1" parent="1">
                     <mxGeometry x="480" y="410" width="280" height="40" as="geometry"/>
                 </mxCell>
@@ -221,7 +201,7 @@
                         <mxPoint x="630" y="684.29" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="287" value="" style="endArrow=ERone;html=1;rounded=0;strokeWidth=2;fontSize=12;startArrow=ERone;startFill=0;endFill=0;" edge="1" parent="1">
+                <mxCell id="287" value="" style="endArrow=ERone;html=1;rounded=0;strokeWidth=2;fontSize=12;startArrow=ERone;startFill=0;endFill=0;exitX=0.167;exitY=1.082;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="288">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="80" y="350" as="sourcePoint"/>
                         <mxPoint x="760" y="785" as="targetPoint"/>
@@ -230,6 +210,12 @@
                             <mxPoint x="760" y="810"/>
                         </Array>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="288" value="nickname (string型, NOT NULL)" style="whiteSpace=wrap;html=1;strokeColor=#f0f0f0;fontSize=12;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="350" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="289" value="" style="whiteSpace=wrap;html=1;strokeColor=#f0f0f0;fontSize=12;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="190" y="760" width="280" height="40" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
