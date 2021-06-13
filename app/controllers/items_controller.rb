@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :new, :edit, :update]
-  before_action :product_find, only: [:show, :edit, :update]
-  before_action :current_user_check, only: [:edit, :update]
+  before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
+  before_action :product_find, only: [:show, :edit, :update, :destroy]
+  before_action :current_user_check, only: [:edit, :update, :destroy]
 
   def index
     @product = Product.includes(:user).order("created_at DESC")
@@ -34,6 +34,10 @@ class ItemsController < ApplicationController
     end
   end
 
+  def destroy
+    @product.destroy
+    redirect_to root_path
+  end
   private
 
   def product_params
