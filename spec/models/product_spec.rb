@@ -32,31 +32,31 @@ RSpec.describe Product, type: :model do
       end
 
       it "status_idが空白だと出品できない" do
-        @product.status_id = '1'
+        @product.status_id = 1
         @product.valid?
         expect(@product.errors.full_messages).to include "Status must be other than 1"
       end
 
       it "prefecture_idが空白だと出品できない" do
-        @product.prefecture_id = '1'
+        @product.prefecture_id = 1
         @product.valid?
         expect(@product.errors.full_messages).to include "Prefecture must be other than 1"
       end
 
       it "delivery_charge_idが空白だと出品できない" do
-        @product.delivery_charge_id = '1'
+        @product.delivery_charge_id = 1
         @product.valid?
         expect(@product.errors.full_messages).to include "Delivery charge must be other than 1"
       end
 
       it "date_shipment_idが空白だと出品できない" do
-        @product.date_shipment_id = '1'
+        @product.date_shipment_id = 1
         @product.valid?
         expect(@product.errors.full_messages).to include "Date shipment must be other than 1"
       end
 
       it "category_idが空白だと出品できない" do
-        @product.category_id = '1'
+        @product.category_id = 1
         @product.valid?
         expect(@product.errors.full_messages).to include "Category must be other than 1"
       end
@@ -74,13 +74,13 @@ RSpec.describe Product, type: :model do
       end
 
       it "valueが299円以下だと出品できない" do
-        @product.value = '100'
+        @product.value = 100
         @product.valid?
         expect(@product.errors.full_messages).to include "Value must be greater than or equal to 300"
       end
 
       it "valueが10000000円以上だと出品できない" do
-        @product.value = '10000000'
+        @product.value = 10000000
         @product.valid?
         expect(@product.errors.full_messages).to include "Value must be less than or equal to 9999999"
       end
