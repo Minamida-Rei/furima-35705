@@ -1,8 +1,8 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new, :edit, :update]
-  before_action :product_find, only: [:sohw, :edit, :update]
+  before_action :product_find, only: [:show, :edit, :update]
   before_action :current_user_check, only: [:edit, :update]
-  
+
   def index
     @product = Product.includes(:user).order("created_at DESC")
   end
