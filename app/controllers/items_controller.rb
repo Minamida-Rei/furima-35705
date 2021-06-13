@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :new]
+  before_action :authenticate_user!, only: [:create, :new, :edit]
   def index
     @product = Product.includes(:user).order("created_at DESC")
   end
@@ -21,6 +21,25 @@ class ItemsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def edit
+    @product = Product.find(params[:id])
+    if user_signed_in? 
+      unless current_user.id == @product.user.id
+        redirect_to action: :index
+      end
+    end
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    if @product.save
+      redirect_to item_path
+    else
+      render :edit
+    end
+  end
+  
   private
 
   def product_params
