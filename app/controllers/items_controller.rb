@@ -2,9 +2,11 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   before_action :product_find, only: [:show, :edit, :update, :destroy]
   before_action :current_user_check, only: [:edit, :update, :destroy]
+  before_action :sold_check, only: [:edit, :update, :destroy]
 
   def index
     @product = Product.includes(:user).order("created_at DESC")
+    @order = Order.all
   end
 
   def new
@@ -24,6 +26,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    
   end
 
   def update
@@ -42,10 +45,6 @@ class ItemsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :explain, :category_id, :prefecture_id, :status_id, :date_shipment_id, :delivery_charge_id, :value, :image).merge(user_id: current_user.id)
-  end
-
-  def product_find
-    @product = Product.find(params[:id])
   end
 
   def current_user_check
