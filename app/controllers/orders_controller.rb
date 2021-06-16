@@ -1,8 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :product_pick, only: [:index, :create]
-  before_action :sold_check, only: [:index, :create]
-  before_action :user_check, only: [:index, :create]
+  before_action :sold_user_check, only: [:index, :create]
 
   def index
     @order_address = OrderAddress.new
@@ -38,14 +37,8 @@ class OrdersController < ApplicationController
     @product = Product.find(params[:item_id])
   end
 
-  def sold_check
-    if @product.order
-      redirect_to root_path
-    end
-  end
-
-  def user_check
-    if current_user.id == @product.user.id
+  def sold_user_check
+    if @product.order.present? || current_user.id == @product.user.id
       redirect_to root_path
     end
   end
