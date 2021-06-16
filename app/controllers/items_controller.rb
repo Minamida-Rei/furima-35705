@@ -1,8 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :new, :edit, :update, :destroy]
   before_action :product_find, only: [:show, :edit, :update, :destroy]
-  before_action :current_user_check, only: [:edit, :update, :destroy]
-  before_action :sold_check, only: [:edit, :update, :destroy]
+  before_action :sold_current_user_check, only: [:edit, :update, :destroy]
 
   def index
     @product = Product.includes(:user).order("created_at DESC")
@@ -51,14 +50,8 @@ class ItemsController < ApplicationController
     params.require(:product).permit(:name, :explain, :category_id, :prefecture_id, :status_id, :date_shipment_id, :delivery_charge_id, :value, :image).merge(user_id: current_user.id)
   end
 
-  def current_user_check
-    unless current_user.id == @product.user.id
-      redirect_to action: :index
-    end
-  end
-
-  def sold_check
-    if @product.order
+  def sold_current_user_check
+    if @product.order.present? || current_user.id != @product.user.id
       redirect_to root_path
     end
   end
