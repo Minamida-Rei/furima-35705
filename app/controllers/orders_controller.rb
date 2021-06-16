@@ -2,12 +2,10 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :product_pick, only: [:index, :create]
   before_action :sold_check, only: [:index, :create]
+  before_action :user_check, only: [:index, :create]
 
   def index
     @order_address = OrderAddress.new
-    if current_user.id == @product.user.id
-      redirect_to root_path
-    end
   end
 
   def create
@@ -22,7 +20,7 @@ class OrdersController < ApplicationController
   end
 
   private
-  
+
   def order_params
     params.require(:order_address).permit(:postal_code, :prefecture_id, :city, :address, :building_name, :phone_number).merge(user_id: current_user.id, product_id: params[:item_id], token: params[:token])
   end
@@ -42,6 +40,12 @@ class OrdersController < ApplicationController
 
   def sold_check
     if @product.order
+      redirect_to root_path
+    end
+  end
+
+  def user_check
+    if current_user.id == @product.user.id
       redirect_to root_path
     end
   end
